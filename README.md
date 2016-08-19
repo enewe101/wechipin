@@ -17,4 +17,4 @@ http://localhost:1337/api/auth/login?email=****@***.com&password=********
 
 Put Angular app in:
 
-```/assets/```
+`/assets/`
