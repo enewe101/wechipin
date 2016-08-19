@@ -18,3 +18,7 @@ http://localhost:1337/api/auth/login?email=****@***.com&password=********
 Put Angular app in:
 
 `/assets/`
+
+API explained: http://sailsjs.org/documentation/reference/blueprint-api/populate-where
+
+Modules are defined in /api/modules .
