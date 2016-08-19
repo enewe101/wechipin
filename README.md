@@ -21,4 +21,4 @@ Put Angular app in:
 
 API explained: http://sailsjs.org/documentation/reference/blueprint-api/populate-where
 
-Modules are defined in /api/modules .
+Models are defined in /api/models .
