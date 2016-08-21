@@ -1,0 +1,4 @@
+allow volunteer orgs to maintain a pool of volunteer members
+	- allow them to keep a threads specific to those pools
+	- organize schedules and signups
+	- new postings by that organization appear in the member's feeds
