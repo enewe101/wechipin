@@ -1,0 +1,20 @@
+login label {
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+}
+
+login .login-label {
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 4px;
+	font-weight: bold;
+	border-radius: 3px;
+	border: solid 1px rgb(220,220,220);
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+}

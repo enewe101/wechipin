@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="/js/dependencies/sails.io.js"></script>
+
+	<!-- Dependencies -->
+  <script src="/js/dependencies/sails.io.js"></script>
+	<script src="/bower/jquery/dist/jquery.min.js"></script>
+	<script src="/bower/angular/angular.min.js"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="/frontend-app/welcome/welcome.css">
+	<link rel="stylesheet" type="text/css" href="/frontend-app/header/header.css">
+	<link rel="stylesheet" type="text/css" href="/index.css">
+	<link rel="stylesheet" type="text/css" href="/frontend-app/dropmenu/dropmenu.css">
+	<link rel="stylesheet" type="text/css" href="/frontend-app/login/login.css">
+	<!--link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"-->
+	<!--link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"-->
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
+
+	<!-- Angular modules, directives, components, etc -->
+	<script src="/frontend-app/app/app.module.js"></script>
+	<script src="/frontend-app/app/appbody.directive.js"></script>
+	<script src="/frontend-app/user/user.module.js"></script>
+	<script src="/frontend-app/welcome/welcome.module.js"></script>
+	<script src="/frontend-app/welcome/welcome.directive.js"></script>
+	<script src="/frontend-app/header/header.module.js"></script>
+	<script src="/frontend-app/header/header.directive.js"></script>
+	<script src="/frontend-app/dropmenu/dropmenu.module.js"></script>
+	<script src="/frontend-app/login/login.module.js"></script>
+	<script src="/frontend-app/login/login.directive.js"></script>
+	<script src="/frontend-app/lib/random-chars.js"></script>
+
 </head>
-<body>
-Put AngularJS here.
+<body appbody>
+
 </body>
 </html>

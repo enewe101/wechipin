@@ -1,0 +1,23 @@
+{
+  "name": "WeChipIn",
+  "description": "App for finding volunteer work",
+  "main": "app.js",
+  "authors": [
+    "WeChipIn Team"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/enewe101/wechipin",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.0"
+  }
+}

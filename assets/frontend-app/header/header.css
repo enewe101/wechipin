@@ -1,0 +1,109 @@
+header {
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+	position: fixed;
+	z-index: 1000;
+	width: calc(100% - 80px);
+	padding: 0 40px 0 40px;
+	transition: all 0.5s ease-in-out;
+
+	color: rgb(250,240,210);
+	height: 80px;
+	border-bottom: solid 1px rgb(250,240,210);
+	background-color: transparent;
+}
+
+header.not-scrolled {
+	color: rgb(250,240,210);
+	height: 80px;
+	border-bottom: solid 1px rgb(250,240,210);
+	background-color: transparent;
+}
+
+header.scrolled {
+	color: rgb(64,150,140);
+	height: 50px;
+	border-bottom: solid 1px rgba(220, 220, 220, 0.5);
+	background-color: white;
+}
+
+
+header dropmenu .drop {
+	border: none;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+}
+
+header.not-scrolled dropmenu {
+	margin-top: 24px;
+	transition: all 0.5s ease-in-out;
+}
+
+header.scrolled dropmenu {
+	margin-top: 12px;
+	transition: all 0.5s ease-in-out;
+}
+
+header .brand {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	transition: all 0.5s ease-in-out;
+}
+
+header.not-scrolled .brand {
+	height: calc(100% - 14px);
+	padding: 14px 0 0 0;
+}
+
+header.scrolled .brand {
+	padding: 0 0 0 0;
+}
+
+header .moniker {
+	display: inline;
+	vertical-align: middle;
+	font-family: 'Baloo Tamma', cursive;
+	font-size: 32px;
+}
+
+header #logo {
+	display: inline;
+}
+
+header #logo svg path {
+	transition: all 0.5s ease-in-out;
+	stroke-width: 3;
+}
+
+header.not-scrolled #logo svg path {
+	stroke: rgb(250,240,210);
+}
+
+header.scrolled #logo svg path {
+	stroke: rgb(64,150,140);
+}
+
+header #logo svg {
+	transition: all 0.5s ease-in-out;
+	vertical-align: middle;
+	width: auto;
+}
+
+header.not-scrolled #logo svg {
+	height: 48px;
+}
+
+header.scrolled #logo svg {
+	height: 38px;
+}
+
+.right-elements {
+	float: right;
+	height: 100%;
+}
+
+.login {
+	display: inline-block;
+	border: solid 1px green;
+}
