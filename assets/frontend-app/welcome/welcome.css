@@ -83,6 +83,7 @@ welcome .third-bottom {
 
 welcome .third {
 	margin-right: 20px;
+	cursor: pointer;
 }
 
 welcome .third-first .third-bottom {
@@ -107,6 +108,7 @@ welcome .one-two-three {
 
 welcome .third-last {
 	margin-right:0;
+	cursor: pointer;
 }
 
 welcome .thirds {
