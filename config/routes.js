@@ -32,12 +32,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /': {
+  'get *': {
     controller: 'index',
-    action: 'index'
-  },
-  '*': {
-    target: '/',
+    action: 'index',
     skipAssets: true,
     skipRegex: /^\/api\/.*$/
   },
