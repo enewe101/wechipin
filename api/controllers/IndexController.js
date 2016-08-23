@@ -7,8 +7,12 @@
 var path = require('path');
 
 module.exports = {
-  index: function(req, res) {
-    res.sendfile(path.join(__dirname, '../../assets/', 'index.html'));
+  index: function(req, res, next) {
+    if (!req.useragent.isBot) {
+      return res.sendfile(path.join(__dirname, '../../assets/', 'index.html'));
+    } else {
+      next();
+    }
   }
 };
 
