@@ -8,6 +8,7 @@
   <script src="/js/dependencies/sails.io.js"></script>
 	<script src="/bower/jquery/dist/jquery.min.js"></script>
 	<script src="/bower/angular/angular.min.js"></script>
+	<script src="/bower/angular-ui-router/release/angular-ui-router.min.js"></script>
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="/frontend-app/welcome/welcome.css">
@@ -19,22 +20,25 @@
 	<!--link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"-->
 	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	<!-- Angular modules, directives, components, etc -->
+	<script src="/frontend-app/lib/random-chars.js"></script>
 	<script src="/frontend-app/app/app.module.js"></script>
 	<script src="/frontend-app/app/appbody.directive.js"></script>
 	<script src="/frontend-app/user/user.module.js"></script>
 	<script src="/frontend-app/welcome/welcome.module.js"></script>
 	<script src="/frontend-app/welcome/welcome.directive.js"></script>
+	<script src="/frontend-app/welcome2/welcome.module.js"></script>
+	<script src="/frontend-app/welcome2/welcome.directive.js"></script>
 	<script src="/frontend-app/header/header.module.js"></script>
 	<script src="/frontend-app/header/header.directive.js"></script>
 	<script src="/frontend-app/dropmenu/dropmenu.module.js"></script>
 	<script src="/frontend-app/login/login.module.js"></script>
 	<script src="/frontend-app/login/login.directive.js"></script>
-	<script src="/frontend-app/lib/random-chars.js"></script>
 
 </head>
-<body appbody>
-
+<body>
+	<ui-view></ui-view>
 </body>
 </html>

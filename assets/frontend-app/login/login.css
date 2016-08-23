@@ -11,10 +11,9 @@ login .login-label {
 }
 
 input[type="text"], input[type="password"] {
-	padding: 4px;
+	padding: 8px;
 	font-weight: bold;
 	border-radius: 3px;
-	border: solid 1px rgb(220,220,220);
+	border: solid 1px rgb(180,180,180);
 	font-size: 20px;
-	font-family: 'Lato', sans-serif;
 }

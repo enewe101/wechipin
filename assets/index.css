@@ -1,20 +1,30 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
 }
 
 .button {
 	background: rgb(64,150,140);
 	border-radius: 4px;
 	border: none;
-	box-shadow: inset 1px 1px rgba(255,255,255,0.3);
-	font-family: 'Lato', sans-serif;
+	box-shadow: inset 2px 2px 2px rgba(255,255,255,0.2), inset -2px -2px 2px rgba(0,0,0,0.2);
 	font-size: 20px;
-	font-weight: bold;
-	padding: 4px 8px;
+	padding: 8px 16px;
 	color: white;
 	display: inline-block;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: rgb(74,160,150);
+}
+
+.button:active {
+	padding: 9px 15px 7px 17px;
+	background: rgb(54,140,130);
+	box-shadow: inset -2px -2px 2px rgba(255,255,255,0.2), inset 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .clearfix {
@@ -51,4 +61,21 @@ body {
 
 .vert-48 {
 	height: 48px;
+}
+
+a {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+
+a.no-underline:hover {
+	text-decoration: none;
 }
