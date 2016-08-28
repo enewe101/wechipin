@@ -22,3 +22,6 @@ Put Angular app in:
 API explained: http://sailsjs.org/documentation/reference/blueprint-api/populate-where
 
 Models are defined in /api/models .
+
+Sendgrid API key: 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
+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

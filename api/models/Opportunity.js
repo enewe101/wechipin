@@ -28,17 +28,19 @@ module.exports = {
       via: 'opportunities',
       dominant: true
     },
-    title: {
-      type: 'string',
-      required: true
+    title_en: {
+      type: 'string'
     },
-    description: {
+    title_fr: {
+      type: 'string'
+    },
+    description_en: {
+      type: 'text'
+    },
+    description_fr: {
       type: 'text'
     },
     contactName: {
-      type: 'string'
-    },
-    contactEmail: {
       type: 'string'
     },
     contactNumber: {
@@ -52,7 +54,14 @@ module.exports = {
     },
     country: {
       model: 'country'
-    }
+    },
+    contactEmail: {
+      type: 'email'
+    },
+    events: {
+      collection: 'event',
+      via: 'opportunity'
+    },
   }
 };
 
