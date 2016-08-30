@@ -47,7 +47,9 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'get /find-your-cause': 'CauseController.findYourCause'
+  'get /find-your-cause': 'CauseController.findYourCause',
+
+  'post /bulkImport': 'OpportunityController.bulkImport',
 
   /***************************************************************************
   *                                                                          *

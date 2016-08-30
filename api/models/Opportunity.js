@@ -46,8 +46,14 @@ module.exports = {
     contactNumber: {
       type: 'string'
     },
-    lengthOfCommitment: {
+    lengthOfCommitment_en: {
       type: 'string'
+    },
+    lengthOfCommitment_fr: {
+      type: 'string'
+    },
+    commitment: {
+      model: 'commitment'
     },
     city: {
       model: 'city'
