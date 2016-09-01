@@ -28,6 +28,7 @@
     "sails": "~0.12.4",
     "sails-disk": "~0.10.9",
     "sendgrid": "^4.0.2",
+    "synchronize": "^0.9.15",
     "waterlock": "^0.1.2-rc1",
     "waterlock-local-auth-bcryptjs": "^0.1.2-rc3"
   },
