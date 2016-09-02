@@ -1,0 +1,7 @@
+questionpane pane {
+	display: none;
+}
+
+questionpane pane.active {
+	display: block;
+}

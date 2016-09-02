@@ -28,9 +28,23 @@ module.exports = {
       via: 'opportunities',
       dominant: true
     },
+		job_types: {
+      collection: 'job_type',
+      via: 'opportunities',
+      dominant: true
+		},
+		interactions: {
+      collection: 'interaction',
+      via: 'opportunities',
+      dominant: true
+		},
+		qualifications: {
+      collection: 'qualification',
+      via: 'opportunities',
+      dominant: true
+		},
     title: {
       type: 'string',
-      required: true
     },
     description: {
       type: 'text'
@@ -52,7 +66,6 @@ module.exports = {
     },
     country: {
       model: 'country'
-    }
+    },
   }
 };
-
