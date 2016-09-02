@@ -39,6 +39,18 @@ module.exports.routes = {
     skipRegex: /^\/api\/.*$/
   },
 
+  'get /welcome': {
+    view: 'homepage'
+  },
+
+  'get /': {
+    view: 'homepage'
+  },
+
+  'get /find-your-cause': 'CauseController.findYourCause',
+
+  'post /bulkImport': 'OpportunityController.bulkImport',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

@@ -1,0 +1,9 @@
+<section id="causes">
+  <h1>List of causes</h1>
+
+  <ul>
+    <% causes.forEach(function(cause)  { %>
+    <li><%= cause.name %> <%= cause.id %></li>
+    <% }); %>
+  </ul>
+</section>

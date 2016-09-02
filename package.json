@@ -5,8 +5,10 @@
   "description": "App for finding volunteer work",
   "keywords": [],
   "dependencies": {
+    "async-each-series": "^1.1.0",
     "bower": "^1.7.9",
     "ejs": "2.3.4",
+    "express-useragent": "^0.2.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-coffee": "1.0.0",
@@ -19,12 +21,16 @@
     "grunt-contrib-watch": "1.0.0",
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
+    "hashids": "^1.1.0",
     "include-all": "~0.1.6",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "rc": "1.0.1",
     "sails": "~0.12.4",
     "sails-disk": "~0.10.9",
+    "sendgrid": "^4.0.2",
+    "synchronize": "^0.9.15",
     "waterlock": "^0.1.2-rc1",
-    "waterlock-local-auth": "^0.1.2-rc1"
+    "waterlock-local-auth-bcryptjs": "^0.1.2-rc3"
   },
   "scripts": {
     "debug": "node debug app.js",

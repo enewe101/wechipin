@@ -46,7 +46,17 @@ module.exports = {
     },
     gender: {
       type: 'string'
-    }
+    },
+    sentMessages: {
+      collection: 'message',
+      via: 'fromUser',
+      dominant: true
+    },
+    receivedMessages: {
+      collection: 'message',
+      via: 'toUser',
+      dominant: true
+    },
   }),
 
   beforeCreate: require('waterlock').models.user.beforeCreate,

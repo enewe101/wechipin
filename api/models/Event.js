@@ -1,5 +1,5 @@
 /**
- * Skill.js
+ * Event.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -8,21 +8,17 @@
 module.exports = {
 
   attributes: {
-    name_en: {
-      type: 'string',
-      unique: true
+    start: {
+      type: 'datetime'
     },
-    name_fr: {
-      type: 'string',
-      unique: true
+    end: {
+      type: 'datetime'
     },
-    opportunities: {
-      collection: 'opportunity',
-      via: 'skills'
+    location: {
+      type: 'string'
     },
-    users: {
-      collection: 'user',
-      via: 'skills'
+    opportunity: {
+      model: 'opportunity'
     }
   }
 };
