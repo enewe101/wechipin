@@ -15,11 +15,11 @@ module.exports = {
     },
     opportunities: {
       collection: 'opportunity',
-      via: 'job_types'
+      via: 'jobTypes'
     },
     users: {
       collection: 'user',
-      via: 'job_types'
+      via: 'jobTypes'
     }
   }
 };

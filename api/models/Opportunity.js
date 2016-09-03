@@ -33,22 +33,7 @@ module.exports = {
     },
     title_fr: {
       type: 'string'
-  	},
-	job_types: {
-      collection: 'job_type',
-      via: 'opportunities',
-      dominant: true
-	},
-	interactions: {
-      collection: 'interaction',
-      via: 'opportunities',
-      dominant: true
-	},
-	qualifications: {
-      collection: 'qualification',
-      via: 'opportunities',
-      dominant: true
-	},
+    },
     description_en: {
       type: 'text'
     },
@@ -83,5 +68,21 @@ module.exports = {
       collection: 'event',
       via: 'opportunity'
     },
+    jobTypes: {
+      collection: 'jobType',
+      via: 'opportunities',
+      dominant: true
+    },
+    interactions: {
+      collection: 'interaction',
+      via: 'opportunities',
+      dominant: true
+    },
+    qualifications: {
+      collection: 'qualification',
+      via: 'opportunities',
+      dominant: true
+    },
   }
 };
+
