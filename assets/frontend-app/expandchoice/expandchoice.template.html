@@ -1,0 +1,19 @@
+<div class="choice-container">
+
+	<div class="choice-header">
+		<span class="glyphicon glyphicon-plus-sign choice-open-icon"></span>
+		<span class="choice-header-label">
+			{{choicespec.tag}}
+		</span>
+	</div>
+
+	<div class="choice-set">
+		<div ng-repeat="choice in choicespec.choices" class="choice">
+			<input id="{{get_for(choice, choicespec)}}" type="checkbox" data="{{choice}}" checked>
+			<label for="{{get_for(choice, choicespec)}}">
+				<span class="choice-label">{{choice}}</span>
+			</label>
+		</div>
+	</div>
+
+</div>

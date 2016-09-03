@@ -1,0 +1,114 @@
+opportunities {
+	background: rgb(252,244,217);
+}
+
+opportunities #search-sidebar {
+	width: 300px;
+	height: 100vh;
+	float: left;
+	background: rgb(0,170,160);
+	color: white;
+	padding: 30px 20px;
+}
+
+opportunities #search-bar {}
+
+opportunities #search-bar input {
+	width: 250px;
+	border-radius: 999px;
+	font-weight: normal;
+	padding: 3px 36px 3px 16px;
+	background: transparent;
+	border: solid 2px white;
+	color: white;
+	padding-right: 30px;
+}
+opportunities #search-bar .search-icon {
+	margin-left: -36px;
+	color: white;
+}
+
+opportunities #sort-bar {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 0.8em;
+}
+
+opportunities #sort-bar .sort-bar-bullet {
+	float: left;
+	width: 20px;
+}
+
+opportunities #sort-bar .sort-bar-content {
+	float: left;
+	width: calc(100% - 30px);
+}
+
+opportunities #sort-bar a,
+opportunities #sort-bar a:link,
+opportunities #sort-bar a:hover,
+opportunities #sort-bar a:active,
+opportunities #sort-bar a:visited {
+	color: rgb(252, 244, 217);
+}
+
+opportunities #filter-bar {
+	margin-top: 30px;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+
+opportunities #search-main-area {
+	width: calc(100% - 300px);
+	float: left;
+	height: 100vh;
+	overflow: scroll;
+	background: rgb(252,244,217);
+}
+
+opportunities opportunity {
+	/*border: solid 1px rgb(230,230,230);*/
+	background: white;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	width: 700px;
+	padding: 20px;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+
+opportunities opportunity .job-apply {
+	float: right;
+}
+
+opportunities opportunity .job-title {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+opportunities opportunity .job-alignment {
+	font-size: 0.8em;
+}
+opportunities opportunity .job-organization {
+	color: orange;
+}
+opportunities opportunity .job-cause {
+	color: blue;
+}
+
+opportunities opportunity .job-body {
+	margin-top: 10px;
+}
+
+opportunities opportunity .job-left {
+	float: left;
+	width: 400px;
+}
+
+opportunities opportunity .job-right {
+	float: right;
+	width: calc(100% - 400px - 20px);
+	font-size: 0.8em;
+}

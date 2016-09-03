@@ -1,0 +1,38 @@
+expandchoice {
+	display: block;
+	border-radius: 4px;
+	background: rgb(251,120,89);
+	color: white;
+	margin-top: 4px;
+	cursor: pointer;
+	height: 40px;
+	transition: height 0.2s ease-in-out;
+	overflow: hidden;
+}
+expandchoice .choice-container {
+	padding: 8px;
+}
+
+expandchoice .choice-set {
+	max-height: 300px;
+	overflow: scroll;
+	padding: 0 8px;
+	font-size: 0.8em;
+}
+
+expandchoice label,
+expandchoice input {
+	cursor: pointer;
+}
+
+expandchoice input {
+	display: block;
+	float:left;
+	width: 20px;
+}
+
+expandchoice label {
+	display: block;
+	float: left;
+	width: calc(100% - 20px);
+}

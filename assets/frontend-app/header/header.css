@@ -1,6 +1,7 @@
 header {
 	font-size: 20px;
 	position: fixed;
+	top:0;
 	z-index: 1000;
 	width: calc(100% - 80px);
 	padding: 0 40px 0 40px;

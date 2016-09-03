@@ -1,0 +1,57 @@
+findcause #page {
+	background: rgb(250,240,210);
+}
+
+findcause h2 {
+	margin:0;
+}
+
+findcause #choose-activity {
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: solid 1px rgba(0,0,0,0.1);
+	width: 800px;
+	color: rgb(64,150,140);
+	border-radius: 30px;
+}
+
+findcause .subtext {
+	margin-left: 10px;
+}
+
+findcause .preamble {
+	border-bottom: solid 1px rgba(0,0,0,0.1);
+	padding: 30px;
+}
+
+findcause questionpane {
+	padding: 30px;
+}
+
+findcause .question-subtext {
+	box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+	background: white;
+	padding: 10px;
+	margin: 10px;
+	font-size: 0.8em;
+	border-radius: 3px;
+}
+
+findcause .option {
+	font-size: 0.8em;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+	cursor: pointer;
+	height: 80px;
+	width: 240px;
+	background: rgb(230,110,83);
+	color: white;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	border-radius: 2px;
+}
+
+findcause .option.active {
+	background: rgb(70,32,102);
+}

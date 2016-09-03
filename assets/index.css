@@ -1,8 +1,35 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
+	min-height: 100vh;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
 }
 
 .button {
@@ -14,6 +41,10 @@ body {
 	padding: 8px 16px;
 	color: white;
 	display: inline-block;
+	cursor: pointer;
+}
+
+.pointer {
 	cursor: pointer;
 }
 
@@ -78,4 +109,8 @@ a:active {
 
 a.no-underline:hover {
 	text-decoration: none;
+}
+
+.small {
+	font-size: 0.6em;
 }

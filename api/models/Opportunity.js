@@ -68,6 +68,21 @@ module.exports = {
       collection: 'event',
       via: 'opportunity'
     },
+    jobTypes: {
+      collection: 'jobType',
+      via: 'opportunities',
+      dominant: true
+    },
+    interactions: {
+      collection: 'interaction',
+      via: 'opportunities',
+      dominant: true
+    },
+    qualifications: {
+      collection: 'qualification',
+      via: 'opportunities',
+      dominant: true
+    },
   }
 };
 
