@@ -1,0 +1,15 @@
+db:
+  image: mongo
+web:
+  image: node
+  command: /wechipin/run.sh
+  volumes:
+    - .:/wechipin
+  ports:
+    - "1337:1337"
+  links:
+    - db
+  environment:
+    PORT: 1337
+    HOST: 0.0.0.0
+    VIRTUAL_HOST: wechip.in
