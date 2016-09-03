@@ -1,0 +1,49 @@
+<div class="job-header">
+	<div class="job-apply button">apply!</div>
+	<div class="job-title">
+		Fantastic job opportunity with {{ job.organizations[0]['name'] }}
+	</div>
+
+	<div class="job-alignment">
+		Working with
+		<span class="job-organization">
+			{{ job.organizations[0]['name'] }}
+		</span>
+		<span ng-if="job.causes.length" class="job-causes">
+			to help
+			<span ng-repeat="cause in job.causes">
+				<span class="job-cause">{{add_article(cause['name'])}}</span>{{$last?'':', '}}
+			</span>
+		</span>
+	</div>
+
+</div>
+
+
+<div class="job-body">
+
+	<div class="job-left">
+		<div class="description">
+			{{ job.description }}
+		</div>
+	</div>
+
+	<div class="job-right">
+		<div ng-if="job.languages" class="languages">
+			<span class="bold">languages required:</span><br>(<em>any</em> of the following):
+			<ul>
+				<li ng-repeat="language in job.languages">
+					{{ language['name'] }}{{($last?'':',')}}
+					{{($index==job.languages.length-2? 'or' : '')}}
+				</li>
+			</ul>
+		</div>
+		<div class="length-of-commitment">
+			<span class="bold">timing:</span><br>
+			{{ job.lengthOfCommitment }}
+		</div>
+		<div class="causes"></div>
+	</div>
+	<div class="clearfix"></div>
+
+</div>

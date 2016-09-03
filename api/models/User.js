@@ -57,6 +57,18 @@ module.exports = {
       via: 'toUser',
       dominant: true
     },
+	interactions: {
+		collection: 'interaction',
+		via: 'users'
+    },
+	job_types: {
+		collection: 'job_type',
+		via: 'users'
+    },
+	qualifications: {
+		collection: 'qualification',
+		via: 'users'
+	}
   }),
 
   beforeCreate: require('waterlock').models.user.beforeCreate,
