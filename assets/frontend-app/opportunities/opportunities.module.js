@@ -1,1 +1,1 @@
-angular.module('opportunities', ['opportunitysearch', 'expandchoice']);
+angular.module('opportunities', ['opportunitysearch', 'expandchoice', 'textsearch']);

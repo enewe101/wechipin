@@ -18,12 +18,12 @@ angular.module('expandchoice').directive('expandchoice', function(){
 			let inputs = element.find('input');
 			element.on('change', 'input', function(){
 				scope.onchange(
-					scope.index, scope.choicespec.tag, $(this).attr('data'), $(this).prop('checked')
+					scope.index, scope.choicespec.key, $(this).attr('data'), $(this).prop('checked')
 				);
 			})
 
 			scope.get_for = function(choice, choicespec) {
-				let choice_id = choicespec.tag.replace(' ', '-');
+				let choice_id = choicespec.key.replace(' ', '-');
 				choice_id += '_' + choice;
 				return choice_id;
 			}

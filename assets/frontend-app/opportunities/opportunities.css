@@ -13,19 +13,44 @@ opportunities #search-sidebar {
 
 opportunities #search-bar {}
 
-opportunities #search-bar input {
+/* Set the placeholder color for the search bar.
+This requires non-standard rules to unify across browsers */
+opportunities #search-bar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(255,255,255,0.5);
+}
+opportunities #search-bar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgb(255,255,255);
+   opacity:  0.5;
+}
+opportunities #search-bar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255,255,255);
+   opacity:  0.5;
+}
+opportunities #search-bar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgba(255,255,255,0.5);
+}
+
+opportunities #search-bar text-search input {
 	width: 250px;
 	border-radius: 999px;
 	font-weight: normal;
-	padding: 3px 36px 3px 16px;
+	padding: 13px 26px 19px 16px;
 	background: transparent;
 	border: solid 2px white;
 	color: white;
 	padding-right: 30px;
 }
-opportunities #search-bar .search-icon {
-	margin-left: -36px;
+opportunities #search-bar text-search .search-icon {
+	margin-left: -12px;
 	color: white;
+	position: relative;
+	top: 5px;
+}
+opportunities #search-bar text-search .cancel-icon {
+	margin-left: -12px;
+	color: white;
+	position: relative;
+	top: 5px;
 }
 
 opportunities #sort-bar {
