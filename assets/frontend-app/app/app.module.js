@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
 	'user', 'welcome', 'findcause', 'header', 'dropmenu', 'login', 'ui.router',
-	'opportunities'
+	'opportunities', 'application'
 ]
 //	,function($rootScopeProvider){
 //	  $rootScopeProvider.digestTtl(45);
@@ -36,6 +36,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 	}).state('opportunities', {
 		url: '/opportunities',
 		template: '<opportunities></opportunities>'
+
+	}).state('apply', {
+		url: '/apply/{opportunityid}',
+		template: '<application opportunityid="opportunityid"></application>',
+		controller: function ($scope, $stateParams) {
+			$scope.opportunityid = $stateParams['opportunityid'];
+		}
 	});
 
 }])

@@ -19,9 +19,11 @@ function harmonic(values) {
 
 
 
-angular.module('opportunitysearch', []);
+angular.module('opportunitysearch', ['constants']);
 
-angular.module('opportunitysearch').factory('opportunitysearchservice', function() {
+angular.module('opportunitysearch').factory('opportunitysearchservice', [
+'constantsService',
+	function(constantsService) {
 
 	// Initialize the service object
 	let service = {
@@ -45,8 +47,17 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', function
 		textquery: '',
 
 		// Ranked opportunities
-		opportunities: []
+		opportunities: [],
+		all_opportunities: {}
 
+	}
+
+	// Populate the filters of the opportunitySearchService with the
+	// supported filters (designated in the `constants` module)
+	for(let i = 0; i < constantsService.choices.length; i++ ) {
+		let choice = constantsService.choices[i];
+		let key = choice.key;
+		service['filters'][key] = $.extend([], choice.choices);
 	}
 
 	function tokenize_remove_stop_words(text) {
@@ -55,33 +66,47 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', function
 		}
 		let query_tokens = text.trim().split(/\s+/);
 		let keep_tokens = query_tokens.filter(
-			function(x){return !~stopwords.indexOf(x);}
+			function(x){return !~constantsService.stopwords.indexOf(x);}
 		);
 		return keep_tokens;
+	}
+
+	function get_opportunity_text(opportunity) {
+		let all_text = [];
+		let text_fields = constantsService.opportunity_text_fields;
+
+		// Get out all the text fields
+		for (let i=0; i < text_fields.length; i++) {
+			let field_names = text_fields[i].split('.');
+			let primary_field_name = field_names[0];
+			let texts_to_add;
+
+			// If their is only the primary field, just push its value directly
+			if (field_names.length == 1) {
+				texts_to_add = [opportunity[primary_field_name]];
+
+			// If we have a subfield, pull out the embedded values, and push them all
+			}	else {
+				let secondary_field_name = field_names[1];
+				texts_to_add = opportunity[primary_field_name].map(
+					function(x){return x[secondary_field_name];}
+				);
+			}
+
+			// Push the new text onto the runing list of texts
+			all_text.push.apply(all_text, texts_to_add);
+		}
+
+		// return all the text fields, concatenated (space-separated)
+		return all_text.join(' ');
 	}
 
 	// This private service method calculates the number of times a given term
 	// from a text search query matches a term in an opportunity
 	function get_num_matches(opportunity, query_tokens) {
 
-		// First, concatenate all the opportunitites text
-		all_text = [
-			opportunity['title'],
-			opportunity['description'],
-			opportunity['organizations'].map(function(x){return x['name']}).join(' '),
-			opportunity['languages'].map(function(x){return x['name']}).join(' '),
-			opportunity['causes'].map(function(x){return x['name']}).join(' '),
-			opportunity['skills'].map(function(x){return x['name']}).join(' '),
-			opportunity['city'],
-			opportunity['country'],
-			opportunity['lengthOfCommitment'],
-			opportunity['contactEmail'],
-			opportunity['contactName'],
-			opportunity['contactNumber'],
-			opportunity['qualifications'].map(function(x){return x['name']}).join(' '),
-			opportunity['interactions'].map(function(x){return x['name']}).join(' '),
-			opportunity['job_types'].map(function(x){return x['name']}).join(' ')
-		].join(' ');
+		// Concatenate all the text fields in this opportunity
+		let all_text = get_opportunity_text(opportunity);
 
 		// Convert the search string into a series of regexes (one for each word)
 		// typed in
@@ -180,6 +205,12 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', function
 		callback(filtered_opportunities);
 	};
 
+	// This function calls the api to request all opportunity listings with no
+	// filters applied.  It needs to be called at least once before any
+	// opportunitites can be found in the service['opportutnities'] array.
+	// Currently this is called by the opportunities controller, but it should
+	// be called by the service itself because it's really the services
+	// initialization concern.
 	service.load = function(callback){
 		let url = '/api/opportunity'
 		$.ajax({
@@ -209,178 +240,4 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', function
 	}
 
 	return service;
-});
-
-let stopwords = ['a',
- 'about',
- 'above',
- 'after',
- 'again',
- 'against',
- 'all',
- 'am',
- 'an',
- 'and',
- 'any',
- 'are',
- "aren't",
- 'as',
- 'at',
- 'be',
- 'because',
- 'been',
- 'before',
- 'being',
- 'below',
- 'between',
- 'both',
- 'but',
- 'by',
- "can't",
- 'cannot',
- 'could',
- "couldn't",
- 'did',
- "didn't",
- 'do',
- 'does',
- "doesn't",
- 'doing',
- "don't",
- 'down',
- 'during',
- 'each',
- 'few',
- 'for',
- 'from',
- 'further',
- 'had',
- "hadn't",
- 'has',
- "hasn't",
- 'have',
- "haven't",
- 'having',
- 'he',
- "he'd",
- "he'll",
- "he's",
- 'her',
- 'here',
- "here's",
- 'hers',
- 'herself',
- 'him',
- 'himself',
- 'his',
- 'how',
- "how's",
- 'i',
- "i'd",
- "i'll",
- "i'm",
- "i've",
- 'if',
- 'in',
- 'into',
- 'is',
- "isn't",
- 'it',
- "it's",
- 'its',
- 'itself',
- "let's",
- 'me',
- 'more',
- 'most',
- "mustn't",
- 'my',
- 'myself',
- 'no',
- 'nor',
- 'not',
- 'of',
- 'off',
- 'on',
- 'once',
- 'only',
- 'or',
- 'other',
- 'ought',
- 'our',
- 'oursourselves',
- 'out',
- 'over',
- 'own',
- 'same',
- "shan't",
- 'she',
- "she'd",
- "she'll",
- "she's",
- 'should',
- "shouldn't",
- 'so',
- 'some',
- 'such',
- 'than',
- 'that',
- "that's",
- 'the',
- 'their',
- 'theirs',
- 'them',
- 'themselves',
- 'then',
- 'there',
- "there's",
- 'these',
- 'they',
- "they'd",
- "they'll",
- "they're",
- "they've",
- 'this',
- 'those',
- 'through',
- 'to',
- 'too',
- 'under',
- 'until',
- 'up',
- 'very',
- 'was',
- "wasn't",
- 'we',
- "we'd",
- "we'll",
- "we're",
- "we've",
- 'were',
- "weren't",
- 'what',
- "what's",
- 'when',
- "when's",
- 'where',
- "where's",
- 'which',
- 'while',
- 'who',
- "who's",
- 'whom',
- 'why',
- "why's",
- 'with',
- "won't",
- 'would',
- "wouldn't",
- 'you',
- "you'd",
- "you'll",
- "you're",
- "you've",
- 'your',
- 'yours',
- 'yourself',
- 'yourselves'];
+}]);
