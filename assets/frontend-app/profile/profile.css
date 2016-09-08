@@ -1,0 +1,72 @@
+profile .page {
+	background: rgb(252,244,217);
+	min-height: 100vh;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+profile .main-area {
+	/*border: solid 1px rgb(230,230,230);*/
+	background: white;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	width: 1000px;
+	padding: 30px 40px 40px 40px;
+	display: block;
+	margin: auto;
+	border-radius: 4px;
+}
+
+profile user-avatar {
+	float: left;
+}
+
+profile .basic-info {
+	margin-left: 40px;
+	margin-top: 40px;
+	display: block;
+	float: left;
+}
+
+profile .main-info {
+	width: 700px;
+	margin: auto;
+}
+
+profile label {
+	width: 160px;
+}
+
+profile .not-specified {
+	color: rgb(220,220,220);
+	font-style: italic;
+}
+
+profile .not-specified::before {
+	content: '['
+}
+
+profile .not-specified::after {
+	content: ']'
+}
+
+profile .badge-valued {
+	float: left;
+	width: 400px;
+	margin-top: 10px;
+}
+
+profile .badge-valued:nth-child(even) {
+	margin-left: 20px;
+}
+
+profile .additional-info {
+	width: 820px;
+	margin: auto;
+	margin-top: 40px;
+}
+
+profile .badges {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}

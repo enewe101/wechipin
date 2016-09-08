@@ -1,1 +1,1 @@
-angular.module('header', []);
+angular.module('header', ['user']);

@@ -1,0 +1,144 @@
+<header class="scrolled" transitions="false"></header>
+<header-spacer></header-spacer>
+<div class="page">
+	<div class="main-area">
+
+		<div class="main-info">
+			<user-avatar class="big" editable="true"></user-avatar>
+
+			<div class="basic-info">
+				<div class="form-line">
+					<label for="fullName">Full Name:</label>
+					<span class="datum" ng-bind-html="filter_val(user.fullName)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="streetAddress">Address:</label>
+					<span class="datum" ng-bind-html="filter_val(user.streetAddress)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="city">City:</label>
+					<span class="datum" ng-bind-html="filter_val(user.city)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="country">Country:</label>
+					<span class="datum" ng-bind-html="filter_val(user.country)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="postalCode">Postal Code:</label>
+					<span class="datum" ng-bind-html="filter_val(user.postalCode)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="postalCode">Postal Code:</label>
+					<span class="datum" ng-bind-html="filter_val(user.postalCode)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="dateOfBirth">Date Of Birth:</label>
+					<span class="datum" ng-bind-html="filter_val(user.dateOfBirth)"></span>
+				</div>
+
+				<div class="form-line">
+					<label for="gender">Gender:</label>
+					<span class="datum" ng-bind-html="filter_val(user.gender)"></span>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="additional-info">
+
+			<div class="badge-valued">
+				<label for="skills">Skills:</label>
+				<div class="badges">
+					<div ng-if="user.skills.length">
+						<div class="badge" ng-repeat"item in user.skills"></div>
+					</div>
+					<div ng-if="user.skills.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="languages">Languages:</label>
+				<div class="badges">
+					<div ng-if="user.languages.length">
+						<div class="badge" ng-repeat"item in user.languages"></div>
+					</div>
+					<div ng-if="user.languages.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="interests">Interests:</label>
+				<div class="badges">
+					<div ng-if="user.interests.length">
+						<div class="badge" ng-repeat"item in user.interests"></div>
+					</div>
+					<div ng-if="user.interests.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="causes">Causes:</label>
+				<div class="badges">
+					<div ng-if="user.causes.length">
+						<div class="badge" ng-repeat"item in user.causes"></div>
+					</div>
+					<div ng-if="user.causes.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="interactions">Interactions:</label>
+				<div class="badges">
+					<div ng-if="user.interactions.length">
+						<div class="badge" ng-repeat"item in user.interactions"></div>
+					</div>
+					<div ng-if="user.interactions.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="jobTypes">Job Types:</label>
+				<div class="badges">
+					<div ng-if="user.jobTypes.length">
+						<div class="badge" ng-repeat"item in user.jobTypes"></div>
+					</div>
+					<div ng-if="user.jobTypes.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="badge-valued">
+				<label for="qualifications">Qualifications:</label>
+				<div class="badges">
+					<div ng-if="user.qualifications.length">
+						<div class="badge" ng-repeat"item in user.qualifications"></div>
+					</div>
+					<div ng-if="user.qualifications.length==0">
+						<span class="not-specified">none specified</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+
+	</div>
+</div>

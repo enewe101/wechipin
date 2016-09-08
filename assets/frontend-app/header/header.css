@@ -1,9 +1,16 @@
+header-spacer {
+	width:100%;
+	background: red;
+	height: 50px;
+	display: block;
+}
+
 header {
 	font-size: 20px;
 	position: fixed;
 	top:0;
 	z-index: 1000;
-	width: calc(100% - 80px);
+	width: 100%;
 	padding: 0 40px 0 40px;
 
 	transition: color 0s, height 0.5s ease-in-out, border 0.5s ease-in-out, background 0.5s ease-in-out;

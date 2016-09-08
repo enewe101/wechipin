@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
 	'user', 'welcome', 'findcause', 'header', 'dropmenu', 'login', 'ui.router',
-	'opportunities', 'application', 'alert'
+	'opportunities', 'application', 'alert', 'profile'
 ]
 //	,function($rootScopeProvider){
 //	  $rootScopeProvider.digestTtl(45);
@@ -43,6 +43,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		controller: function ($scope, $stateParams) {
 			$scope.opportunityid = $stateParams['opportunityid'];
 		}
+
+	}).state('profile', {
+		url: '/profile/{userid}',
+		template: '<profile-view userid="userid"></profile-view>',
+		controller: function ($scope, $stateParams) {
+			$scope.userid = $stateParams['userid'];
+		}
+
 	});
 
 }])

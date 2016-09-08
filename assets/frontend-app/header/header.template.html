@@ -9,6 +9,19 @@
 
 	<div class="right-elements">
 
+		<dropmenu class="nav-item user-menu">
+
+      <div class="drop-toggle">
+        <span class="toggler-text">{{user.email}}</span>
+        &#x25BF;
+      </div>
+
+      <div class="drop left">
+          <logout></logout>
+					<a ui-sref="profile({userid:user.id})">Profile</a>
+      </div>
+    </dropmenu>
+
 		<dropmenu class="nav-item login-menu">
 
       <div class="drop-toggle">
