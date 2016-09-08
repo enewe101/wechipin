@@ -1,0 +1,127 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Ready to send your application!</h4>
+      </div>
+      <div class="modal-body">
+
+				<div id="register" class="active">
+					<div>
+						Provide an email and password so we can contact you when the organization replies!
+					</div>
+					<div class="modal-form-controls">
+						<div class="formline">
+							<label for="email">Email:</label><input name="email" id="register-email" type="email"></input>
+							<div class="clearfix"></div>
+						</div>
+						<div class="formline">
+							<label for="password">Password:</label><input name="password" id="register-password" type="password"></input>
+							<div class="clearfix"></div>
+						</div>
+						<div class="formline">
+							<span class="small">Already registered?  <a id="show-login" class="pointer">Login</a>.
+						</div>
+					</div>
+				</div>
+
+				<div id="login">
+					<div>
+						Ok, we'll send the application from your existing accout!  Login below:
+					</div>
+					<div class="modal-form-controls">
+						<div class="formline">
+							<label for="email">Email:</label><input name="email" id="login-email" type="email"></input>
+							<div class="clearfix"></div>
+						</div>
+						<div class="formline">
+							<label for="password">Password:</label><input name="password" id="login-password" type="password"></input>
+							<div class="clearfix"></div>
+						</div>
+						<div class="formline">
+							<span class="small">Don't have an account yet?  <a id="show-register" class="pointer">Register</a>!
+						</div>
+					</div>
+				</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-primary" id="send-button">Send!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="job-header">
+	<div class="back-link">
+		<a ui-sref="opportunities"><span class="glyphicon glyphicon-chevron-left"></span> back to opportunities</a>
+	</div>
+	<div class="job-title">
+		Apply for: Fantastic job opportunity with {{ job.organizations[0]['name'] }}
+	</div>
+
+	<div class="job-alignment">
+		Working with
+		<span class="job-organization">
+			{{ job.organizations[0]['name'] }}
+		</span>
+		<span ng-if="job.causes.length" class="job-causes">
+			to help
+			<span ng-repeat="cause in job.causes">
+				<span class="job-cause">{{add_article(cause['name'])}}</span>{{$last?'':', '}}
+			</span>
+		</span>
+	</div>
+
+</div>
+
+
+<div class="job-body">
+
+	<div class="job-left">
+		<div class="description">
+			{{ job.description_en }}
+		</div>
+	</div>
+
+	<div class="job-right">
+		<div ng-if="job.languages" class="languages">
+			<span class="bold">languages required:</span><br>(<em>any</em> of the following):
+			<ul>
+				<li ng-repeat="language in job.languages">
+					{{ language['name'] }}{{($last?'':',')}}
+					{{($index==job.languages.length-2? 'or' : '')}}
+				</li>
+			</ul>
+		</div>
+		<div class="length-of-commitment">
+			<span class="bold">timing:</span><br>
+			{{ job.lengthOfCommitment_en }}
+		</div>
+		<div class="causes"></div>
+	</div>
+	<div class="clearfix"></div>
+
+</div>
+
+<div class="message-target"></div>
+
+<div class="application-form">
+	<div class="application-info">
+		Describe your interest in volunteering here.
+	</div>
+	<div class="application-form-controls">
+		<textarea id="message-body" class="application-text">Why are you interested in this opportunity?
+
+How are you qualified to fulfill the position?
+
+When are you available?
+
+Do you have any questions about the opportunity?</textarea>
+		<div id="apply-button" class="button">apply</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

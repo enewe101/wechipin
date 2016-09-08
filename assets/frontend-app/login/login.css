@@ -9,11 +9,3 @@ login .login-label {
 	width: 120px;
 	font-weight: bold;
 }
-
-input[type="text"], input[type="password"] {
-	padding: 8px;
-	font-weight: bold;
-	border-radius: 3px;
-	border: solid 1px rgb(180,180,180);
-	font-size: 20px;
-}

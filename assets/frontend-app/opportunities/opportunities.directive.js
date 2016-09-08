@@ -43,7 +43,7 @@ function($scope, $element, $compile, opportunitysearchservice, constantsService)
 	// Stores a reference to the opportunities (each is a tuple, first is the
 	// scope object, second is the html object)
 	job_handles = [];
-	function render_opportunities(data, status, xhr) {
+	function render_opportunities() {
 		// First destroy any existing opporutnitites
 		for (let i = 0; i < job_handles.length; i++) {
 			job_handles[i][0].$destroy();
@@ -51,8 +51,8 @@ function($scope, $element, $compile, opportunitysearchservice, constantsService)
 		job_handlesl = []
 		opportunities_container.empty();
 
-		for (let i = 0; i < data.length; i++) {
-			let job = data[i];
+		for (let i = 0; i < opportunitysearchservice.opportunities.length; i++) {
+			let job = opportunitysearchservice.opportunities[i];
 			let new_scope = $scope.$new(false);
 			new_scope.job = job;
 			let new_opportunity = $compile(opportunity_template)(new_scope);
@@ -61,7 +61,7 @@ function($scope, $element, $compile, opportunitysearchservice, constantsService)
 		}
 	}
 
-	opportunitysearchservice.load(render_opportunities);
+	opportunitysearchservice.onload(render_opportunities);
 
 	// Iterate over all of the jobs (opportunities): for each, build a scope, then
 	// compile an html element from the scope.

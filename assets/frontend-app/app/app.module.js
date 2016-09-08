@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
 	'user', 'welcome', 'findcause', 'header', 'dropmenu', 'login', 'ui.router',
-	'opportunities', 'application'
+	'opportunities', 'application', 'alert'
 ]
 //	,function($rootScopeProvider){
 //	  $rootScopeProvider.digestTtl(45);

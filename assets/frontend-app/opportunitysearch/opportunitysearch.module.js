@@ -46,9 +46,14 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', [
 		// State of the text search.  Used to filter / rank opportunities
 		textquery: '',
 
+		// Whether or not the opportunities have been loaded from the server,
+		// And callbacks to be triggered once they have been loaded
+		loaded: false,
+		_onloads: [],
+
 		// Ranked opportunities
 		opportunities: [],
-		all_opportunities: {}
+		opportunities_index: {}
 
 	}
 
@@ -222,12 +227,37 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', [
 		})
 	};
 
+	service.onload = function(callback) {
+		if(service.loaded) {
+			callback(service);
+		} else {
+			service._onloads.push(callback);
+		}
+	};
+
+	// Process all of the functions registered to fire on load
+	function do_onload() {
+		for (let i = 0; i < service['_onloads'].length; i++) {
+			let callback = service['_onloads'][i];
+			callback(service);
+		}
+	}
+
 	function arm_success_callback(callback) {
 		return function(data, status, xhr) {
+
+			// Keep a local list of all opportunities
 			service.opportunities = data;
-			if (typeof callback === 'function') {
-				callback(data, status, xhr);
+
+			// Create an index of opporunities using their id
+			for (let i = 0; i < data.length; i++) {
+				let opportunity = data[i];
+				service.opportunities_index[opportunity['id']] = opportunity;
 			}
+
+			// Trigger all callbacks registered to fire on load
+			service.loaded = true;
+			do_onload();
 		}
 	}
 
@@ -238,6 +268,9 @@ angular.module('opportunitysearch').factory('opportunitysearchservice', [
 			}
 		}
 	}
+
+	// Initialize the service
+	service.load();
 
 	return service;
 }]);

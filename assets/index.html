@@ -13,6 +13,7 @@
 	<script src="/bower/angular/angular.min.js"></script>
 	<script src="/bower/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/bower/date-format/dist/date-format.min.js"></script>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
@@ -31,6 +32,8 @@
 	<link rel="stylesheet" type="text/css" href="/frontend-app/expandchoice/expandchoice.css">
 	<link rel="stylesheet" type="text/css" href="/frontend-app/textsearch/textsearch.css">
 	<link rel="stylesheet" type="text/css" href="/frontend-app/application/application.css">
+	<link rel="stylesheet" type="text/css" href="/frontend-app/alert/alert.css">
+	<link rel="stylesheet" type="text/css" href="/frontend-app/message/message.css">
 
 	<!-- Angular modules, directives, components, etc -->
 	<script src="/frontend-app/lib/random-chars.js"></script>
@@ -61,10 +64,16 @@
 	<script src="/frontend-app/textsearch/textsearch.module.js"></script>
 	<script src="/frontend-app/application/application.module.js"></script>
 	<script src="/frontend-app/application/application.directive.js"></script>
+	<script src="/frontend-app/application/visible-application.directive.js"></script>
 	<script src="/frontend-app/constants/constants.module.js"></script>
+	<script src="/frontend-app/message/message.module.js"></script>
+	<script src="/frontend-app/message/message.directive.js"></script>
+	<script src="/frontend-app/alert/alert.module.js"></script>
+	<script src="/frontend-app/alert/alert.directive.js"></script>
 
 </head>
 <body>
+	<alert></alert>
 	<ui-view></ui-view>
 </body>
 </html>

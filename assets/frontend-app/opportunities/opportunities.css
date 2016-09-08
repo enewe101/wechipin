@@ -30,6 +30,15 @@ opportunities #search-bar :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    rgba(255,255,255,0.5);
 }
 
+#search-main-area opportunity .job-header a.job-apply,
+#search-main-area opportunity .job-header a.job-apply:hover,
+#search-main-area opportunity .job-header a.job-apply:visited,
+#search-main-area opportunity .job-header a.job-apply:active,
+#search-main-area opportunity .job-header a.job-apply:link {
+	color: white;
+	text-decoration: none;
+}
+
 opportunities #search-bar text-search input {
 	width: 250px;
 	border-radius: 999px;

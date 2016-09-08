@@ -1,6 +1,6 @@
 angular.module('constants', []);
 angular.module('constants').factory('constantsService', function() {
-	service = {};
+	let service = {};
 	service.choices = [
 		{
 			'label': 'Causes',

@@ -1,0 +1,64 @@
+alert {
+	position: fixed;
+	bottom: 20px;
+	width: 100%;
+}
+
+alert .container {
+	width: 600px;
+	padding: 10px;
+	border: solid 1px blue;
+	color: blue;
+	margin-right: 20px;
+	float: right;
+	background: rgb(240,240,255);
+	text-align:center;
+	border-radius: 10px;
+	display: none;
+}
+
+alert.active .container {
+	display: block;
+}
+
+alert.default .container {
+	border: solid 1px rgb(80,80,80);
+	color: rgb(80,80,80);;
+	background: rgb(250,250,250);
+}
+
+alert.info .container {
+	border: solid 1px blue;
+	color: blue;
+	background: rgb(240,240,255);
+}
+
+alert.success .container {
+	border: solid 1px green;
+	color: green;
+	background: rgb(240,255,240);
+}
+
+alert.warn .container {
+	border: solid 1px orange;
+	color: orange;
+	background: rgb(255,255,240);
+}
+
+alert.danger .container {
+	border: solid 1px brown;
+	color: brown;
+	background: rgb(255,240,240);
+}
+
+alert .content{
+	margin-right:14px;
+}
+
+alert .dismiss {
+	position: absolute;
+	top: 5px;
+	right: 26px;
+	font-size: 0.6em;
+	cursor: pointer;
+}

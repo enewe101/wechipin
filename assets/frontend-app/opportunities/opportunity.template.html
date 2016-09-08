@@ -1,5 +1,6 @@
 <div class="job-header">
-	<div class="job-apply button">apply!</div>
+	<a ui-sref="apply({opportunityid: job.id})" class="job-apply button">apply!</a>
+	<!--a href="/apply/{{job.id}}" class="job-apply button">apply!</a-->
 	<div class="job-title">
 		Fantastic job opportunity with {{ job.organizations[0]['name'] }}
 	</div>

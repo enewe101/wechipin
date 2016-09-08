@@ -1,1 +1,1 @@
-angular.module('application', ['opportunitysearch']);
+angular.module('application', ['opportunitysearch', 'user', 'message', 'alert']);
